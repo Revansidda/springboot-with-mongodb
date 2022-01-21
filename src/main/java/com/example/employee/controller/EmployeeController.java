@@ -98,7 +98,7 @@ public class EmployeeController {
     }
 
 
-    @PutMapping("employee/{id}")
+    @PutMapping("/employee/{id}")
     public EmployeeResponse updateEmployeeData(@PathVariable int id, @RequestBody EmployeeRequest request) {
 
         EmployeeResponse employeeResponse = new EmployeeResponse();
