@@ -19,7 +19,7 @@ public class EmployeeController {
     @Autowired
     EmployeeServiceImpl employeeService;
 
-    @PostMapping("/createemployeedata")
+    @PostMapping("/employee")
     public EmployeeResponse createEmployeeData(@RequestBody EmployeeRequest employeeRequest) {
         logger.info("START createEmployeedata() request() " + employeeRequest);
         EmployeeResponse employeeResponse = new EmployeeResponse();
@@ -46,7 +46,7 @@ public class EmployeeController {
     }
 
 
-    @GetMapping("/getemployeedata")
+    @GetMapping("/employee")
     public EmployeeResponse getEmployeeData() {
         logger.info("START getAllEmployeeData() request() ");
         EmployeeResponse employeeResponse = new EmployeeResponse();
@@ -69,7 +69,7 @@ public class EmployeeController {
 
     }
 
-    @GetMapping("/getbyidemployeedata/{id}")
+    @GetMapping("/employee/{id}")
     public EmployeeResponse getByIdEmployeeData(@PathVariable int id) {
         EmployeeResponse employeeResponse = new EmployeeResponse();
         if (id != 0) {
@@ -98,7 +98,7 @@ public class EmployeeController {
     }
 
 
-    @PutMapping("updateemployeedata/{id}")
+    @PutMapping("employee/{id}")
     public EmployeeResponse updateEmployeeData(@PathVariable int id, @RequestBody EmployeeRequest request) {
 
         EmployeeResponse employeeResponse = new EmployeeResponse();
@@ -129,7 +129,7 @@ public class EmployeeController {
         return employeeResponse;
     }
 
-    @DeleteMapping("/deleteemployeedata/{id}")
+    @DeleteMapping("/employee/{id}")
     public EmployeeResponse deleteEmployeeData(@PathVariable int id) {
         String statusMessage = "";
         EmployeeResponse employeeResponse = new EmployeeResponse();
